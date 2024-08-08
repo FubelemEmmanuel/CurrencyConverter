@@ -1,0 +1,51 @@
+<%- include('partials/header.ejs') %>
+
+<h1 class="header">Your Currency Converter</h1>
+
+
+
+<div class="card">
+  
+    <div class="card-header text-center bgcolor">Exchange Currency Converter</div>
+    <% if(locals.amount){ %>
+        <div class="amount"> <h3><%= amount %></h3></div>
+         <% } else{%>
+         
+             <% } %>
+    <div class="card-body">
+        <form action="/exchange" method="post">
+            <div>
+                <label for="from">From:</label>
+                <select name="from" id="" class="form-control">
+                    <option value="USD">USD</option>
+                    <option value="XAF">XAF</option>
+                    <option value="EUR">EUR</option>
+                    <option value="CAD">CAD</option>
+                    
+                </select>
+            </div><span>
+                <div>
+                    <label for="from">To:</label>
+                    <select name="to" id="" class="form-control">
+                        <option value="USD">USD</option>
+                        <option value="XAF">XAF</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CAD">CAD</option>
+                    </select>
+                </div>
+            </span><br><div> <input type="number" class="form-control" placeholder="Enter amount" name="amount"></div><br>
+            <div>
+                <input type="submit" value="convert" class="btn btn-primarys">
+            </div>
+           
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('partials/footer.ejs') %>
